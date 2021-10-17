@@ -1,0 +1,60 @@
+<app-toolbar>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+          <button (click)="createItem()" type="button" class="btn-adicionar btn btn-outline-danger">
+            <span class="material-icons">
+              add_circle_outline
+            </span>
+            Adicionar
+          </button>
+        </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div *ngFor="let item of itemsListToShow; let i = index">
+          <div class="row item-blog">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-10 titulo" [innerHTML]="item.titulo"></div>
+                <div class="col-md-2 div-btn-opciones">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" class="btn-opciones">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="editItem(item)">
+                      <mat-icon>edit</mat-icon>
+                      <span>Editar</span>
+                    </button>
+                    <button mat-menu-item (click)="deleteItem(item)">
+                      <mat-icon>delete</mat-icon>
+                      <span>Eliminar</span>
+                    </button>
+                  </mat-menu>
+                </div>
+              </div>
+              <div class="contenido mt-3" [innerHTML]="item.descripcion"></div>
+            </div>
+            <div class="col-md-6">
+              <img class="imagen" src="{{ item.imagen }}" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+
+    <mat-paginator
+      class="paginado"
+      [length]="totalRegistros"
+      [pageSize]="itemsPorPagina"
+      [pageIndex]="page"
+      [showFirstLastButtons]="false"
+      [hidePageSize]="true"
+      (page)="changePageIndex($event)">
+    </mat-paginator>
+    </div>
+  </div>
+
+</app-toolbar>

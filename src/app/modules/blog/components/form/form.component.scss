@@ -1,0 +1,44 @@
+.btn-outline-danger {
+  color: #4A1725;
+  border-color: #4A1725;
+}
+
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: #4A1725;
+  border-color: #4A1725;
+}
+
+.btn-cerrar {
+  float: right;
+  align-items: center;
+  padding: 0px 5px 0px 5px;
+  margin-right: 5px;
+}
+
+.icono-cerrar {
+  padding-top: 5px;
+}
+
+.fila-titulo {
+  margin: 0px;
+  padding-right: 0px;
+}
+
+.div-titulo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.btn-cancelar {
+  margin-right: 10px;
+}
+
+.input-file {
+  display: none;
+}
+
+.btn-imagen {
+  display: flex;
+}
+
